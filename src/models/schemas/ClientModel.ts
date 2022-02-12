@@ -2,7 +2,7 @@ import IClientModel from "../interfaces/IClientModel";
 
 import { Length, IsNumberString } from "class-validator";
 import ValidableClass from "./ValidableClass";
-export default class ClientModel extends ValidableClass<IClientModel> implements IClientModel {
+export default class ClientModel extends ValidableClass<IClientModel> {
   @IsNumberString()
   @Length(1, 30)
   clientId: string;

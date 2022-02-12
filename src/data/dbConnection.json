@@ -1,1 +1,7 @@
-{ "password": "wolfbike12", "user": "postgres", "port": 5432, "host": "localhost", "database": "printhouse" }
+{
+  "password": "password",
+  "user": "postgres",
+  "port": 1368,
+  "host": "localhost",
+  "database": "printhouse"
+}
