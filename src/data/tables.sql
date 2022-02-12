@@ -28,3 +28,21 @@ CREATE TABLE IF NOT EXISTS purchases(
     "productCode" BIGINT REFERENCES products("productCode") NOT NULL,
     "amount" SMALLINT NOT NULL DEFAULT 1
 );
+
+CREATE TABLE IF NOT EXISTS purchases(
+    "purchaseId" BIGSERIAL PRIMARY KEY NOT NULL,
+    "contractId" BIGINT REFERENCES contracts("contractId") NOT NULL,
+    "productCode" BIGINT REFERENCES products("productCode") NOT NULL,
+    "loggedOn" DATE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS logs(
+    "logId" BIGSERIAL PRIMARY KEY NOT NULL,
+    "loggedOn" DATE NOT NULL DEFAULT NOW(),
+    "description" VARCHAR(1000) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS admins(
+    "adminId" BIGSERIAL PRIMARY KEY NOT NULL,
+    "name" VARCHAR(30)
+);
